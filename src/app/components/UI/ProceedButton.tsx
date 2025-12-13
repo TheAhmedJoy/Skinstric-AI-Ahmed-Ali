@@ -1,5 +1,5 @@
 import Image from "next/image"
-import ButtonRight from "./assets/button-icon-shrunk-right.svg"
+import ButtonRight from "../assets/button-icon-shrunk-right.svg"
 
 export default function ProceedButton() {
     return (

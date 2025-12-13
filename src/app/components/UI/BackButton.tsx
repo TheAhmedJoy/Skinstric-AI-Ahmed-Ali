@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ButtonLeft from "./assets/button-icon-shrunk-left.svg"
+import ButtonLeft from "../assets/button-icon-shrunk-left.svg"
 
 export default function BackButton() {
     return (
