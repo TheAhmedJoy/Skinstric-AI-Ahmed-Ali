@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import localFont from "next/font/local";
-import ButtonLeft from "./assets/button-icon-shrunk-left.svg"
-import ButtonRight from "./assets/button-icon-shrunk-right.svg"
+import ButtonLeft from "../app/components/assets/button-icon-shrunk-left.svg"
+import ButtonRight from "../app/components/assets/button-icon-shrunk-right.svg"
 import ClientAnimationWrapper from "./components/animations/ClientAnimations";
 
 const roobertFontLight = localFont({

@@ -1,5 +1,5 @@
-import localFont from "next/font/local";
 import Link from "next/link"
+import localFont from "next/font/local";
 
 const roobertFontSemiBold = localFont({
     src: "../fonts/RoobertTRIAL-SemiBold.woff2",

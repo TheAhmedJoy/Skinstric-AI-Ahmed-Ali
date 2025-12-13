@@ -1,5 +1,11 @@
 import Image from "next/image"
+import localFont from "next/font/local"
 import ButtonRight from "../assets/button-icon-shrunk-right.svg"
+
+const roobertFontSemiBold = localFont({
+  src: "../assets/fonts/RoobertTRIAL-SemiBold.woff2",
+  weight: "600"
+})
 
 export default function ProceedButton() {
     return (
@@ -11,7 +17,7 @@ export default function ProceedButton() {
                 </span>
             </div>
             <div className="group hidden sm:flex flex-row relative justify-center items-center">
-                <span className="text-sm font-semibold hidden sm:block mr-5">
+                <span className={`text-sm font-semibold hidden sm:block mr-5 ${roobertFontSemiBold.className}`}>
                     PROCEED
                 </span>
                 <Image className="group-hover:scale-110 duration-300" src={ButtonRight} alt="Right button" />

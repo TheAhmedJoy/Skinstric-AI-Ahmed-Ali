@@ -1,5 +1,11 @@
 import Image from "next/image";
+import localFont from "next/font/local";
 import ButtonLeft from "../assets/button-icon-shrunk-left.svg"
+
+const roobertFontSemiBold = localFont({
+  src: "../assets/fonts/RoobertTRIAL-SemiBold.woff2",
+  weight: "600"
+})
 
 export default function BackButton() {
     return (
@@ -12,7 +18,7 @@ export default function BackButton() {
             </div>
             <div className="group hidden sm:flex flex-row relative justify-center items-center">
                 <Image className="group-hover:scale-110 duration-300" src={ButtonLeft} alt="Left button" />
-                <span className="text-sm font-semibold hidden sm:block ml-6 ">
+                <span className={`text-sm font-semibold hidden sm:block ml-6 ${roobertFontSemiBold.className}`}>
                     BACK
                 </span>
             </div>
