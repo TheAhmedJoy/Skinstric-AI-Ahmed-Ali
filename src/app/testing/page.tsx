@@ -149,7 +149,7 @@ async function formSubmition(prevState: PageState, formData: FormData): Promise<
   }
 }
 
-function FormInput({ error }: { error?: string[] }) {
+function FormInputErrorMessage({ error }: { error?: string[] }) {
   return (
     <div className="flex flex-col items-center">
       {error &&
@@ -213,7 +213,7 @@ export default function Page() {
 
         {state.step === 1 && !isStatusLoading && (
           <form action={formAction} className="relative z-10">
-            <FormInput error={state.errors?.name} />
+            <FormInputErrorMessage error={state.errors?.name} />
             <input
               name="name"
               className={`text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[372px] 
@@ -228,7 +228,7 @@ export default function Page() {
 
         {state.step === 2 && !isStatusLoading && !state.location && (
           <form action={formAction} className="relative z-10">
-            <FormInput error={state.errors?.location} />
+            <FormInputErrorMessage error={state.errors?.location} />
             <input
               name="location"
               className={`text-5xl sm:text-6xl font-normal text-center bg-transparent border-b border-black focus:outline-none appearance-none w-[400px] 
