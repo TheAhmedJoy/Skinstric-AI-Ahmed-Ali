@@ -27,13 +27,13 @@ export default function page() {
 
             <div className="pt-4 md:pt-0 pb-8 bg-white sticky md:static bottom-30.5 mb-0 md:mb-0">
                 <div className="absolute bottom-8 w-full flex justify-between md:px-9 px-13">
-                    <Link className="relative" aria-label="Back" href="/testingPage">
+                    <Link className="relative" aria-label="Back" href="/testing">
                         <BackButton />
                     </Link>
 
-                    <Link href="/selectPage">
+                    <Link href="/select">
                         <div className="hidden">
-                            <ProceedButton />
+                            <ProceedButton isSummary={false}/>
                         </div>
                     </Link>
                 </div>

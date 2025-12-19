@@ -274,7 +274,7 @@ export default function Page() {
 
         {state.step === 3 && (
           <Link href="/result" className="inline-block">
-            <ProceedButton />
+            <ProceedButton isSummary={false}/>
           </Link>
         )}
       </div>

@@ -30,7 +30,7 @@ export default function GallerySelectOption() {
 
     const { isModalStatusOpen } = useModal()
 
-    // const router = useRouter()
+    const router = useRouter()
 
     const galleryOptionHandler = () => {
         if (!isModalStatusOpen) {
@@ -142,7 +142,7 @@ export default function GallerySelectOption() {
             if (data.success === true) {
                 storeImageLocally("demographicData", JSON.stringify(data.data))
                 alert("Image analyzed successfully!")
-                // router.push("/selectPage")
+                router.push("/select")
             } else {
                 throw new Error("POST Unsuccessful.")
             }
