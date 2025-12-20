@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useModal } from "./Modals/Modal"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import localFont from "next/font/local"
 import Image from "next/image"
 import SmallRectangleLayer1 from "../components/assets/Small-Rectangle-Whole-Layer1.svg"
@@ -19,7 +19,7 @@ const roobertFontRegular = localFont({
 export default function CameraSelectOption() {
     const [displayModal, setDisplayModal] = useState(false)
     const { setModalStatusOpen } = useModal()
-    // const router = useRouter()
+    const router = useRouter()
 
     const cameraOptionHandler = () => {
         setDisplayModal(true)
@@ -29,7 +29,7 @@ export default function CameraSelectOption() {
     const cameraPermsAllowedHandler = () => {
         setDisplayModal(false)
         setModalStatusOpen(false)
-        // router.push("/camera")
+        router.push("/camera")
     }
 
     const cameraPermsDeniedHandler = () => {
