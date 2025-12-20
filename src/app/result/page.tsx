@@ -28,7 +28,7 @@ export default function Result() {
             <div className="pt-4 md:pt-0 pb-8 bg-white sticky md:static bottom-30.5 mb-0 md:mb-0">
                 <div className="absolute bottom-8 w-full flex justify-between md:px-9 px-13">
                     <Link className="relative" aria-label="Back" href="/testing">
-                        <BackButton />
+                        <BackButton isWhite={false}/>
                     </Link>
 
                     <Link href="/select">

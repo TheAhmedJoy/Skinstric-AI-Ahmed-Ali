@@ -39,7 +39,7 @@ export default function Summary() {
           <div className="pt-4 md:pt-[37px] pb-6 bg-white sticky bottom-40 md:static md:bottom-0 mb-8 md:mb-16">
             <div className="flex justify-between max-w-full mx-auto px-4 md:px-0">
               <Link href="/select">
-                <BackButton />
+                <BackButton isWhite={false}/>
               </Link>
               <Link href="/">
                 <ProceedButton isSummary={false} isHome={true} />

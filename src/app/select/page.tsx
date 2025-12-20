@@ -35,7 +35,7 @@ export default function Select() {
             <div className="pt-4 md:pt-12 pb-8 bg-white sticky md:static bottom-40 mb-0 md:mb-0">
                 <div className="flex justify-between max-w-full mx-auto px-13 md:px-9">
                     <Link href="/result">
-                        <BackButton />
+                        <BackButton isWhite={false}/>
                     </Link>
                     <Link href="/summary">
                         <ProceedButton isSummary={true} isHome={false}/>

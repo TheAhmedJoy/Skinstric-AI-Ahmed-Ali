@@ -1,13 +1,18 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import ButtonLeft from "../assets/button-icon-shrunk-left.svg"
+import ButtonLeftWhite from "../assets/buttin-icon-shrunk-left-white.svg"
 
 const roobertFontSemiBold = localFont({
-  src: "../assets/fonts/RoobertTRIAL-SemiBold.woff2",
-  weight: "600"
+    src: "../assets/fonts/RoobertTRIAL-SemiBold.woff2",
+    weight: "600"
 })
 
-export default function BackButton() {
+type BackType = {
+    isWhite: boolean
+}
+
+export default function BackButton({ isWhite }: BackType) {
     return (
         <div>
             <div className="relative w-12 h-12 flex items-center justify-center border 
@@ -17,8 +22,11 @@ export default function BackButton() {
                 </span>
             </div>
             <div className="group hidden sm:flex flex-row relative justify-center items-center">
-                <Image className="group-hover:scale-110 duration-300" src={ButtonLeft} alt="Left button" />
-                <span className={`text-sm font-semibold hidden sm:block ml-6 ${roobertFontSemiBold.className}`}>
+                {isWhite ?
+                    <Image className="group-hover:scale-110 duration-300" src={ButtonLeftWhite} alt="Left button" />
+                    : <Image className="group-hover:scale-110 duration-300" src={ButtonLeft} alt="Left button" />
+                }
+                <span className={`${isWhite ?? "text-white"} text-sm font-semibold hidden sm:block ml-6 ${roobertFontSemiBold.className}`}>
                     BACK
                 </span>
             </div>

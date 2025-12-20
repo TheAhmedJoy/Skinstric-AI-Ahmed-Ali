@@ -269,7 +269,7 @@ export default function Testing() {
 
       <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
         <Link className="inset-0" aria-label="Back" href="/">
-          <BackButton />
+          <BackButton isWhite={false}/>
         </Link>
 
         {state.step === 3 && (
