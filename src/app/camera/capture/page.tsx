@@ -3,10 +3,21 @@
 import { useRef, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import localFont from "next/font/local"
 import LoadingDots from "../../components/UI/LoadingDots"
 import BackButton from "../../components/UI/BackButton"
 import Image from "next/image"
 import CameraCaptureIcon from "../../components/assets/Capture-Image-icon.svg"
+
+const roobertFontRegular = localFont({
+  src: "../fonts/RoobertTRIAL-Regular.woff2",
+  weight: "400"
+})
+
+const roobertFontSemiBold = localFont({
+  src: "../fonts/RoobertTRIAL-SemiBold.woff2",
+  weight: "600"
+})
 
 export default function CameraCapture() {
 
@@ -195,7 +206,8 @@ export default function CameraCapture() {
   return (
     <div className="relative h-[92vh] w-screen overflow-hidden bg-gray-900">
       {errorStatus && (
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded max-w-md">
+        <div className={`absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-red-100 border border-red-400 text-red-700 
+          px-4 py-3 rounded max-w-md ${roobertFontRegular.className}`}>
           <p>
             {errorStatus}
           </p>
@@ -203,7 +215,8 @@ export default function CameraCapture() {
       )}
 
       {mediaStream && !isCameraStatusReady && !cameraImage && (
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-gray-100 border border-blue-400 text-blue-700 px-4 py-3 rounded max-w-md">
+        <div className={`absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-gray-100 border border-blue-400 text-blue-700 
+          px-4 py-3 rounded max-w-md ${roobertFontRegular.className}`}>
           <p>Initializing camera, please wait...</p>
         </div>
       )}
@@ -215,7 +228,7 @@ export default function CameraCapture() {
           {
             isCameraStatusReady && (
               <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 flex items-center space-x-3">
-                <div className="font-semibold text-sm tracking-tight leading-3.5 text-[#FCFCFC] hidden sm:block">
+                <div className={`font-semibold text-sm tracking-tight leading-3.5 text-[#FCFCFC] hidden sm:block ${roobertFontSemiBold.className}`}>
                   TAKE PICTURE
                 </div>
                 <div className="transform hover:scale-105 ease-in-out duration-300">
@@ -225,10 +238,10 @@ export default function CameraCapture() {
           }
 
           <div className="absolute bottom-30 sm:bottom-40 left-0 right-0 text-center z-20">
-            <p className="text-sm mb-2 font-normal leading-6 text-[#FCFCFC]">
+            <p className={`text-sm mb-2 font-normal leading-6 text-[#FCFCFC] ${roobertFontRegular.className}`}>
               TO GET BETTER RESULTS MAKE SURE TO HAVE
             </p>
-            <div className="flex justify-center space-x-8 text-xs leading-6 text-[#FCFCFC]">
+            <div className={`flex justify-center space-x-8 text-xs leading-6 text-[#FCFCFC] ${roobertFontRegular.className}`}>
               <p>◇ NEUTRAL EXPRESSION</p>
               <p>◇ FRONTAL POSE</p>
               <p>◇ ADEQUATE LIGHTING</p>
@@ -241,20 +254,22 @@ export default function CameraCapture() {
         cameraImage && (
           <div className="absolute inset-0 z-10 flex flex-col items-center">
             <img src={cameraImage} className="absolute inset-0 w-full h-full object-cover" alt="Captured Camera Image" />
-            <div className="absolute text-sm leading-6 uppercase text-[#FCFCFC] top-40">
+            <div className={`absolute text-sm leading-6 uppercase text-[#FCFCFC] top-40 ${roobertFontRegular.className}`}>
               Good Shot!
             </div>
 
             <div className="absolute bottom-40 sm:bottom-16 left-0 right-0 flex flex-col items-center z-20">
-              <h2 className="text-lg font-semibold mb-5 md:mb-7 text-[#FCFCFC] drop-shadow-md">
+              <h2 className={`text-lg font-semibold mb-5 md:mb-7 text-[#FCFCFC] drop-shadow-md ${roobertFontRegular.className}`}>
                 Preview
               </h2>
               <div className="flex justify-center space-x-6">
-                <button className="px-4 py-1 bg-gray-200 text-gray-800 cursor-pointer hover:bg-gray-300 shadow-md text-sm" onClick={restartCamera}>
+                <button className={`px-4 py-1 bg-gray-200 text-gray-800 cursor-pointer hover:bg-gray-300 shadow-md text-sm ${roobertFontRegular.className}`}
+                  onClick={restartCamera}>
                   Retake
                 </button>
                 <button
-                  className="px-6 py-2 bg-[#1A1B1C] text-[#FCFCFC] cursor-pointer hover:bg-gray-800 shadow-md text-sm" onClick={postImage} disabled={isStatusLoading}>
+                  className={`px-6 py-2 bg-[#1A1B1C] text-[#FCFCFC] cursor-pointer hover:bg-gray-800 shadow-md text-sm ${roobertFontRegular.className}`}
+                  onClick={postImage} disabled={isStatusLoading}>
                   {
                     isStatusLoading ?
                       "Uploading..." :
@@ -278,7 +293,7 @@ export default function CameraCapture() {
         isStatusLoading && (
           <div className="fixed inset-0 flex items-center justify-center z-50">
             <div className="bg-[#FCFCFC]  opacity-50 p-6 rounded-lg shadow-lg text-center">
-              <p className="text-xl animate-pulse">ANALYZING IMAGE...</p>
+              <p className={`text-xl animate-pulse ${roobertFontRegular.className}`}>ANALYZING IMAGE...</p>
               <LoadingDots />
             </div>
           </div>)
